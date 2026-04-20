@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Minimal Maven wrapper fallback script.
+# Uses local Maven if available. If not, import the project in an IDE or install Maven.
+
+if command -v mvn >/dev/null 2>&1; then
+  mvn "$@"
+else
+  echo "Maven is not installed on this system."
+  echo "Install Maven and run: mvn spring-boot:run"
+  echo "Or open the backend project in IntelliJ / STS and run LivepollApplication."
+  exit 1
+fi
